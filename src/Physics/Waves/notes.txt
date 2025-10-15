@@ -1,0 +1,10 @@
+General equation of a wave, describing its displacement over time and position is
+y(x, t) = Asin(kx - wt + phi).
+
+lets first generate snapshots of the waves at different time instants.
+
+WaveGenerator.java
+this contains the details about the wave sourse and wave itself.
+    1. its frequency given by k and w.
+    2. its phase phi.
+    3. its amplitude.
