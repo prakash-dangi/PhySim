@@ -5,7 +5,7 @@ import physics.core.Vector2D;
 import java.util.ArrayList;
 
 public class Electrostatics {
-    private static final float COULOMB_CONSTANT = 3f;
+    private static final float COULOMB_CONSTANT = 0.5f;
     public static void applyForces(ArrayList<Particle> particles) {
         for (int i = 0; i < particles.size(); i++) {
             for (int j = i + 1; j < particles.size(); j++) {
