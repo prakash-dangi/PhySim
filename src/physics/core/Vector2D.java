@@ -1,16 +1,13 @@
 package physics.core;
+import processing.core.PApplet;
 
 public class Vector2D {
-    public float x, y;
+    public float x;
+    public float y;
 
     public Vector2D(float x, float y) {
         this.x = x;
         this.y = y;
-    }
-
-    public Vector2D() {
-        this.x = 0;
-        this.y = 0;
     }
 
     public void add(Vector2D v) {
@@ -46,24 +43,18 @@ public class Vector2D {
         }
     }
 
-    public Vector2D normalized() {
-        Vector2D v = new Vector2D(x, y);
-        v.normalize();
-        return v;
-    }
-
-    public void limit(float max) {
-        if (mag() > max) {
-            normalize();
-            mult(max);
-        }
-    }
-
-    public static Vector2D add(Vector2D v1, Vector2D v2) {
-        return new Vector2D(v1.x + v2.x, v1.y + v2.y);
-    }
-
     public static Vector2D sub(Vector2D v1, Vector2D v2) {
         return new Vector2D(v1.x - v2.x, v1.y - v2.y);
+    }
+
+    public static Vector2D div(Vector2D v, float scalar) {
+        if (scalar != 0) {
+            return new Vector2D(v.x / scalar, v.y / scalar);
+        }
+        return new Vector2D(v.x, v.y);
+    }
+
+    public String toString() {
+        return "(x: " + PApplet.nf(this.x, 0, 2) + ", y: " + PApplet.nf(this.y, 0, 2) + ") ";
     }
 }

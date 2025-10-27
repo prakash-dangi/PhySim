@@ -5,7 +5,7 @@ import physics.core.Vector2D;
 import java.util.ArrayList;
 
 public class Gravity {
-    private static final float G = 0.4f;
+    private static final float G = 6.6f;
 
     public static void applyForces(ArrayList<Particle> particles) {
         for (int i = 0; i < particles.size(); i++) {
@@ -33,7 +33,7 @@ public class Gravity {
                     p1.applyForce(forceDirection);
                 }
                 if (!p2.isStatic()) {
-                    p2.applyForce(Vector2D.sub(new Vector2D(0,0), forceDirection));
+                    p2.applyForce(Vector2D.sub(new Vector2D(0, 0), forceDirection));
                 }
             }
         }
